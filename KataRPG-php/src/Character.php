@@ -45,7 +45,10 @@ class Character
         if($this !== $character) 
         {
             $character->health-=$damaged; 
-            return ($level);
+            return $this->health;
+        }
+        else {
+            return $this->health; 
         }
     }
 

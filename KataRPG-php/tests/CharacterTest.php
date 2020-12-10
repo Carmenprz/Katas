@@ -42,14 +42,11 @@ class CharacterTest extends TestCase
 
 	public function test_damage_is_substracted_from_health()
 	{
-		//given escenario
 		$attacker = new Character();
 		$damaged = new Character();
 
-		// action
 		$attacker->attacks(100, $damaged);
 
-		//then
 		$result = $damaged->getHealth();
 
 		$this->assertEquals(900, $result);
@@ -57,14 +54,11 @@ class CharacterTest extends TestCase
 
 	public function test_when_character_dies()
 	{
-		//given escenario
 		$attacker = new Character();
 		$damaged = new Character();
 
-		// action
 		$attacker->attacks(1000, $damaged);
 
-		//then
 		$result = $damaged->isAlive();
 
 		$this->assertEquals(false, $result);
@@ -117,7 +111,7 @@ class CharacterTest extends TestCase
 		$this->assertEquals(1000, $result);
 	}
 
-	public function test_Character_can_only_Heal_itselff()
+	public function test_Character_can_only_Heal_itself()
 	{
 		//given escenario
 		$healer = new Character();
